@@ -55,3 +55,9 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 start.command
+
+
+log
+
+shell/
+android
