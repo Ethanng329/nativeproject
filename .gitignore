@@ -57,10 +57,3 @@ buck-out/
 start.command
 
 
-log
-
-shell/
-android
-ios
-shell
-rncache
