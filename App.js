@@ -8,7 +8,12 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
-import { VictoryBar, VictoryChart, VictoryTheme } from 'victory-native';
+import {
+  VictoryBar,
+  VictoryChart,
+  VictoryTheme,
+  VictoryAxis
+} from 'victory-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,17 +23,29 @@ const instructions = Platform.select({
 });
 
 const data = [
-  { quarter: 1, earnings: 13000 },
+  { quarter: 1, earnings: 900 },
   { quarter: 2, earnings: 16500 },
-  { quarter: 3, earnings: 14250 },
+  { quarter: 3, earnings: 1420 },
   { quarter: 4, earnings: 19000 }
 ];
 
+
+
 export default class App extends React.Component {
+
   render() {
     return (
       <View style={styles.container}>
-        <VictoryChart width={350} theme={VictoryTheme.material}>
+        <Text>Victory Chart native</Text>
+        <VictoryChart
+          width={350}
+          theme={VictoryTheme.material}
+          domainPadding={20}
+        >
+          <VictoryAxis
+            tickValues={[1, 2, 3, 4]}
+            tickFormat={['quarter 1', '2', '3', '4']}
+          />
           <VictoryBar data={data} x="quarter" y="earnings" />
         </VictoryChart>
         <Heading />
@@ -44,7 +61,7 @@ class Heading extends Component<Props> {
     this.handlePress = this.handlePress.bind(this);
   }
   handlePress() {
-    alert('pressed');
+    alert('button pressed');
   }
   render() {
     return (
@@ -53,9 +70,7 @@ class Heading extends Component<Props> {
         title="press me here"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
-      >
-        Click here
-      </Button>
+      />
     );
   }
 }
@@ -83,16 +98,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  welcome: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 50
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
+    backgroundColor: '#C5FCF8'
   }
 });
