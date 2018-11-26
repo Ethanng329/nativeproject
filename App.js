@@ -29,14 +29,10 @@ const data = [
   { quarter: 4, earnings: 19000 }
 ];
 
-
-
 export default class App extends React.Component {
-
   render() {
     return (
       <View style={styles.container}>
-        <Text>Victory Chart native</Text>
         <VictoryChart
           width={350}
           theme={VictoryTheme.material}
@@ -48,29 +44,14 @@ export default class App extends React.Component {
           />
           <VictoryBar data={data} x="quarter" y="earnings" />
         </VictoryChart>
-        <Heading />
+
+        <Button
+          onPress={() => alert('button pressed')}
+          title="press me here"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
       </View>
-    );
-  }
-}
-
-class Heading extends Component<Props> {
-  constructor(props) {
-    super(props);
-
-    this.handlePress = this.handlePress.bind(this);
-  }
-  handlePress() {
-    alert('button pressed');
-  }
-  render() {
-    return (
-      <Button
-        onPress={this.handlePress}
-        title="press me here"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
     );
   }
 }
