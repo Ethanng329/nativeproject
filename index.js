@@ -10,6 +10,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import React from 'react';
 
+//this is to work around react-native app using redux dev tools (createStore only takes 2 arg)
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
