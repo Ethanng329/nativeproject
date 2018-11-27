@@ -14,6 +14,8 @@ import {
   VictoryTheme,
   VictoryAxis
 } from 'victory-native';
+import Reduxdata from './src/Reduxdata';
+import { getData } from './actions';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -24,10 +26,12 @@ const instructions = Platform.select({
 
 const data = [
   { quarter: 1, earnings: 900 },
-  { quarter: 2, earnings: 16500 },
+  { quarter: 2, earnings: 1650 },
   { quarter: 3, earnings: 1420 },
-  { quarter: 4, earnings: 19000 }
+  { quarter: 4, earnings: 1900 }
 ];
+
+getData();
 
 export default class App extends React.Component {
   render() {
@@ -46,11 +50,12 @@ export default class App extends React.Component {
         </VictoryChart>
 
         <Button
-          onPress={() => alert('button pressed')}
+          onPress={() => getData()}
           title="press me here"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
+        <Reduxdata />
       </View>
     );
   }

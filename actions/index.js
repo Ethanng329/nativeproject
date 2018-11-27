@@ -1,6 +1,6 @@
-export function defaultAction (){
-  return {
-    type: "default",
-    payload: payload
+export function getData(payload = 'redux Data') {
+  return;
+  {
+    type: 'GET_DATA', payload;
   }
 }
