@@ -1,6 +1,8 @@
 export function getData(payload = 'redux Data') {
-  return;
+  return(
   {
-    type: 'GET_DATA', payload;
+    type: 'GET_DATA',
+     payload
   }
+  )
 }

@@ -44,13 +44,13 @@ export default class App extends React.Component {
         >
           <VictoryAxis
             tickValues={[1, 2, 3, 4]}
-            tickFormat={['quarter 1', '2', '3', '4']}
+            tickFormat={['quarter ', '2', '3', '4']}
           />
           <VictoryBar data={data} x="quarter" y="earnings" />
         </VictoryChart>
 
         <Button
-          onPress={() => getData()}
+          onPress={() => alert('pressed')}
           title="press me here"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"

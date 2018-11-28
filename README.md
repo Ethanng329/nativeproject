@@ -49,3 +49,5 @@ In this way, you should override teamID in file `ios/exportOptions/app-store.pli
 ```
 open "rndebugger://set-debugger-loc?host=localhost&port=8081"
 ```
+
+- Enable Debug JS Remotely of developer menu on your app
